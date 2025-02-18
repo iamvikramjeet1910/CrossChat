@@ -41,7 +41,7 @@ struct NewMessageView: View {
                         .padding(.leading)
                         
                         Divider()
-                            .padding(.leading, 40) 
+                            .padding(.leading, 40)  
                     }
                 }
             }
