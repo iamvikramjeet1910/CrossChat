@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import SwiftUICore
 
 enum SettingsOptionsViewModel: Int, CaseIterable, Identifiable {
+    //var id: ObjectIdentifier
+    
     case darkMode
     case activeStatus
     case accessibility
@@ -29,6 +32,27 @@ enum SettingsOptionsViewModel: Int, CaseIterable, Identifiable {
             return "Notifications"
         }
     }
-    
-    var id: Int { return self.rawValue }
+        
+        var imageName: String {
+            switch self {
+            case .darkMode: return "moon.circle.fill"
+            case .activeStatus: return "message.badge.circle.fill"
+            case .accessibility: return "person.circle.fill"
+            case .privacy: return "lock.circle.fill"
+            case .notifications: return "bell.circle.fill"
+            }
+        }
+        
+        var imageBackgroundColor: Color {
+            switch self {
+            case .darkMode: return .black
+            case .activeStatus: return Color(.systemGreen)
+            case .accessibility: return .black
+            case .privacy: return Color(.systemBlue)
+            case .notifications: return Color(.systemPurple)
+            }
+        }
+
+        
+        var id: Int { return self.rawValue }
 }
