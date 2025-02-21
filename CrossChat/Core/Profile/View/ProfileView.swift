@@ -2,7 +2,7 @@
 //  ProfileView.swift
 //  CrossChat
 //
-//  Created by Vikram Kumar on 18/02/25.
+//  Created by Vikram Kumar on 21/02/25.
 //
 
 import SwiftUI
@@ -10,6 +10,7 @@ import PhotosUI
 
 struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
+    let user: User
     var body: some View {
         VStack {
             // header
@@ -22,15 +23,13 @@ struct ProfileView: View {
                             .frame(width: 80, height: 80)
                             .clipShape(Circle())
                     } else {
-                        Image(systemName: "person.circle.fill")
-                            .resizable()
-                            .frame(width: 80, height: 80)
-                            .foregroundColor(Color(.systemGray4))
+                        CircularProfileImageView(user: user, size: .xlarge)
+                        
                     }
                     
                 }
                 
-                Text("Vikram Kumar")
+                Text(user.fullname)
                     .font(.title2)
                     .fontWeight(.semibold)
             }
@@ -66,5 +65,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(user: User.MOCK_USER)
 }
