@@ -10,6 +10,7 @@ import PhotosUI
 
 struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
+
     let user: User
     var body: some View {
         VStack {
@@ -51,7 +52,7 @@ struct ProfileView: View {
                 }
                 Section {
                     Button("Log Out") {
-                        
+                        AuthService.shared.signOut()
                     }
                     Button("Delete Account") {
                         
