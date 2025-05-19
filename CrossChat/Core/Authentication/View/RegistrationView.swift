@@ -11,10 +11,9 @@ struct RegistrationView: View {
     @StateObject var viewModel = RegistrationViewModel()
     @Environment(\.dismiss) var dismiss
     var body: some View {
-        
         VStack{
             //Spacer()
-            Image("messenger-app-icon")
+            Image("Cross-Chat-Logo")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150, height: 150)
@@ -69,7 +68,6 @@ struct RegistrationView: View {
             .font(.footnote)
         }
         .padding(.vertical)
-          
     }
 }
 
