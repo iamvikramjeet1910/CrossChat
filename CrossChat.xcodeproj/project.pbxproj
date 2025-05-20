@@ -37,6 +37,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C632E9922DDC45060023D1AD /* Images */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Images;
+			sourceTree = "<group>";
+		};
 		C66129EE2D6307E700D018F5 /* CrossChat */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CrossChat;
@@ -86,6 +91,7 @@
 		C66129E32D6307E700D018F5 = {
 			isa = PBXGroup;
 			children = (
+				C632E9922DDC45060023D1AD /* Images */,
 				C66129EE2D6307E700D018F5 /* CrossChat */,
 				C66129FF2D6307EA00D018F5 /* CrossChatTests */,
 				C6612A092D6307EA00D018F5 /* CrossChatUITests */,
@@ -119,6 +125,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				C632E9922DDC45060023D1AD /* Images */,
 				C66129EE2D6307E700D018F5 /* CrossChat */,
 			);
 			name = CrossChat;
