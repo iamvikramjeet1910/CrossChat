@@ -11,6 +11,9 @@ struct ChatView: View {
     @StateObject var viewModel: ChatViewModel
     let user: User
     
+    @State private var selectedLanguage: String = "English"
+    let languages = ["English", "Spanish", "French", "German", "Hindi"]
+    
     init(user: User) {
         self.user = user
         self._viewModel = StateObject(wrappedValue: ChatViewModel(user: user))
@@ -27,7 +30,7 @@ struct ChatView: View {
                         Text(user.fullname)
                             .font(.title3)
                             .fontWeight(.semibold)
-                        Text("Messenger")
+                        Text("CrossChat")
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }
@@ -47,12 +50,30 @@ struct ChatView: View {
             
             Spacer()
             ZStack(alignment: .trailing) {
-                TextField("Message...", text: $viewModel.messageText, axis: .vertical)
-                    .padding(12)
-                    .padding(.trailing, 48)
+                HStack(spacing: 8) { // HStack to arrange language picker, text field, and send button
+                // Language selection picker
+                    Picker("Language", selection: $selectedLanguage)
+                        {
+                        ForEach(languages, id: \.self) { language in
+                            Text(language)
+                        }
+                    }
+                    .pickerStyle(.menu) // Use menu style for a dropdown effect
+                    .frame(width: 100) // Adjust width as needed
+                    .padding(.leading, 8) // Add some padding to the left
                     .background(Color(.systemGroupedBackground))
                     .clipShape(Capsule())
                     .font(.subheadline)
+                    .foregroundColor(.primary) // Ensure text color is visible
+
+                    // Message input TextField
+                    TextField("Message...", text: $viewModel.messageText, axis: .vertical)
+                    .padding(12)
+                    .padding(.trailing, 48) // Make space for the send button
+                    .background(Color(.systemGroupedBackground))
+                    .clipShape(Capsule())
+                    .font(.subheadline)
+                }
                 
                 Button {
                     viewModel.sendMessage()

@@ -19,7 +19,7 @@ class AuthService {
     init(){
         self.userSession = Auth.auth().currentUser
         loadCurrentUserData()
-        print("Debug: User session id is \(userSession?.uid)")
+        print("Debug: User session id is \(userSession?.uid ?? "qw1w")")
     }
     
     

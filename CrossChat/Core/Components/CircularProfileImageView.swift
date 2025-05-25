@@ -39,11 +39,25 @@ struct CircularProfileImageView: View {
     let size: ProfileImageSize
         
     var body: some View {
-        if let imageUrl = user?.profileImageUrl {
-            Image(imageUrl)
-                .resizable()
-                .frame(width:  size.dimension, height: size.dimension)
-                .clipShape(Circle())
+        if let profileImageUrl = user?.profileImageUrl, let url = URL(string: profileImageUrl) {
+            AsyncImage(url: url) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .frame(width: size.dimension, height: size.dimension)
+                        .clipShape(Circle())
+                case .failure(_):
+                    CircularProfileImageView(user: user, size: .xlarge) // Fallback UI
+                case .empty:
+                    ProgressView() // Loading indicator
+                @unknown default:
+                    // Safe fallback for unexpected states
+                    Text("Unexpected image loading state.")
+                        .foregroundColor(.red)
+                        .frame(width: 80, height: 80)
+                }
+            }
         } else {
             Image(systemName: "person.circle.fill")
                 .resizable()

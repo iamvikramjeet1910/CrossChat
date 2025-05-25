@@ -27,4 +27,5 @@ class ChatViewModel: ObservableObject {
     func sendMessage() {
         service.sendMessage(messageText)
     }
+    
 }
