@@ -1,6 +1,7 @@
-![Not able to Load the Image](Images/image1.png)
-![Not able to Load the Image](Images/image2.png)
-![Not able to Load the Image](Images/image3.png)
-![Not able to Load the Image](Images/image4.png)
-![Not able to Load the Image](Images/image5.png)
-![Not able to Load the Image](Images/image6.png)
+<img src="Images/image1.png" alt="Not able to Load the Image" width="300">
+<img src="Images/image2.png" alt="Not able to Load the Image" width="300">
+<img src="Images/image3.png" alt="Not able to Load the Image" width="300">
+<img src="Images/image4.png" alt="Not able to Load the Image" width="300">
+<img src="Images/image5.png" alt="Not able to Load the Image" width="300">
+<img src="Images/image6.png" alt="Not able to Load the Image" width="300">
+
