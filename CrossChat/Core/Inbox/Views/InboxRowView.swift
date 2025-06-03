@@ -9,6 +9,10 @@ import SwiftUI
 
 struct InboxRowView: View {
     let message: Message
+    
+    private var isFromCurrentUser: Bool {
+        return message.isFromCurrentUser
+    }
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             CircularProfileImageView(user: message.user, size: .medium)
@@ -16,11 +20,24 @@ struct InboxRowView: View {
                 Text(message.user?.fullname ?? "")
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                Text(message.messageText)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .lineLimit(2)
-                    .frame(maxWidth: UIScreen.main.bounds.width - 100, alignment: .leading)
+                
+                if isFromCurrentUser {
+                    Text(message.messageText)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                        .lineLimit(2)
+                        .frame(maxWidth: UIScreen.main.bounds.width - 100, alignment: .leading)
+                } else {
+                    HStack(alignment: .bottom, spacing: 8) {
+                        Text(message.translatedText ?? "Not able to translate")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            .lineLimit(2)
+                            .frame(maxWidth: UIScreen.main.bounds.width - 100, alignment: .leading)
+                
+                        }
+                }
+                
             }
             HStack {
                 Text(message.timestampString)

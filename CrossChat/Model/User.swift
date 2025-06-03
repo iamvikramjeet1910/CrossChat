@@ -13,6 +13,7 @@ struct User: Codable, Identifiable, Hashable {
     let fullname: String
     let email: String
     var profileImageUrl: String?
+    var preferredLanguage: String? = "English"
     
     var id: String {
         return uid ?? NSUUID().uuidString

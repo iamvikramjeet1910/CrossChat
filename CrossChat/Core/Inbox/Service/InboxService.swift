@@ -13,7 +13,10 @@ class InboxService {
     @Published var documentChanges = [DocumentChange]()
     
     func observeRecentMessages() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("Error: User is not authenticated.") // Debug log
+            return
+        }
         
         let query = FirestoreConstants
             .MessageCollection
@@ -21,12 +24,23 @@ class InboxService {
             .collection("recent-messages")
             .order(by: "timestamp", descending: true)
         
-        query.addSnapshotListener { snapshot, _ in
+        query.addSnapshotListener { snapshot, error in
+            if let error = error {
+                print("Error observing snapshots: \(error.localizedDescription)")
+                return
+            }
+            
             guard let changes = snapshot?.documentChanges.filter({
                 $0.type == .added || $0.type == .modified
-            }) else { return }
+            }) else {
+                print("Snapshot listener: No document changes.")
+                return
+            }
             
-            self.documentChanges = changes
+            print("Document changes observed: \(changes.count)") // Debug log
+            DispatchQueue.main.async { // Ensure changes are published on the main thread
+                self.documentChanges = changes
+            }
         }
     }
 }

@@ -15,6 +15,9 @@ struct Message: Identifiable, Codable, Hashable {
     let toId: String
     let messageText: String
     let timestamp: Timestamp
+    let originalLanguage: String
+    let translatedText: String?    
+    let targetLanguage: String?
     
     var user: User?
     
