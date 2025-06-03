@@ -36,14 +36,15 @@ A full-stack **cross-language real-time chat application** that breaks language 
     <td style="padding: 10px;"><img src="Images/image2.png" alt="Not able to Load the Image" width="250"><br/>
           <b>SignupView Screen</b><br/>
     </td>
+  </tr>
+  <tr>
     <td style="padding: 10px;"><img src="Images/image3.png" alt="Not able to Load the Image" width="250"><br/>
           <b>Select user to chat with</b><br/>
     </td>
-  </tr>
-  <tr>
     <td style="padding: 10px;"><img src="Images/image4.png" alt="Not able to Load the Image" width="250"><br/>
           <b>First User InboxView Screen(Select preffered language)</b><br/>
     </td>
+  <tr>
     <td style="padding: 10px;"><img src="Images/image5.png" alt="Not able to Load the Image" width="250"><br/>
           <b>Second User InboxView Screen(Select preffered language)</b><br/>
     </td>
@@ -51,6 +52,7 @@ A full-stack **cross-language real-time chat application** that breaks language 
           <b>First User ChatView Screen</b><br/>
     </td>
   </tr>
+
     <tr>
     <td style="padding: 10px;"><img src="Images/image7.png" alt="Not able to Load the Image" width="250"><br/>
           <b>Second User ChatView Screen</b><br/>
