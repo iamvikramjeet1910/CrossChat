@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if viewModel.userSession != nil {
-                InboxView()
+                HomeView()
             } else {
                 LoginView()
             }
@@ -20,7 +20,7 @@ struct ContentView: View {
     } 
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView(user: User)
+//}
 

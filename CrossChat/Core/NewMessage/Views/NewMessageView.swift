@@ -55,7 +55,7 @@ struct NewMessageView: View {
                     Button("Cancel") {
                         dismiss()
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(.blue)
                 }
             }
         }

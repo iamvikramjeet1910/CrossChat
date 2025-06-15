@@ -76,9 +76,9 @@ struct InboxView: View {
                 // Profile + title
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack {
-                        NavigationLink(value: viewModel.currentUser) {
-                            CircularProfileImageView(user: viewModel.currentUser, size: .small)
-                        }
+//                        NavigationLink(value: viewModel.currentUser) {
+//                            CircularProfileImageView(user: viewModel.currentUser, size: .xSmall)
+//                        }
                         Text("Chats")
                             .font(.title)
                             .fontWeight(.semibold)
@@ -110,7 +110,7 @@ struct InboxView: View {
                         Image(systemName: "square.and.pencil.circle.fill")
                             .resizable()
                             .frame(width: 32, height: 32)
-                            .foregroundStyle(.black, Color(.systemGray5))
+                            .foregroundStyle(.blue, Color(.systemGray5))
                     }
                 }
             }

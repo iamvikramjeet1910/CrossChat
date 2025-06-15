@@ -105,6 +105,7 @@ struct ProfileView: View {
                         CircularProfileImageView(user: user, size: .xlarge)
                     }
                 }
+                
                 Text(user.fullname)
                     .font(.title2)
                     .fontWeight(.semibold)

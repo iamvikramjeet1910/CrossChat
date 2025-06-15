@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChatMessageCell: View {
     let message: Message
-
+    let OtherUser : User
     
     private var isFromCurrentUser: Bool {
         return message.isFromCurrentUser
@@ -27,8 +27,7 @@ struct ChatMessageCell: View {
                     .frame(maxWidth: UIScreen.main.bounds.width / 1.5, alignment: .trailing)
             } else {
                 HStack(alignment: .bottom, spacing: 8) {
-                    CircularProfileImageView(user: message.user, size: .xxSmall)
-                    
+                    CircularProfileImageView(user: OtherUser, size: .xxSmall)
                     Text(message.translatedText ?? "Not able to translate")
                         .font(.subheadline)
                         .padding()

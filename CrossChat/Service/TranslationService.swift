@@ -8,7 +8,7 @@
 import Foundation
 
 class TranslationService {
-    let apiKey = "AIzaSyDyON3YX9FUcglJ_89DCRQDCJX6T4PGvCQ" // Replace with your API key
+    let apiKey = "AIzaSyDKeTOUcFBOegYd0vwVWC-QhbbxTAxK-j8" // Replace with your API key
 
     func translate(text: String, fromLanguage: String, toLanguage: String, completion: @escaping (String?) -> Void) {
         let urlString = "https://translation.googleapis.com/language/translate/v2?key=\(apiKey)"
